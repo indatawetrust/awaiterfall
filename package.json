@@ -1,0 +1,30 @@
+{
+  "name": "awaiterfall",
+  "version": "0.0.1",
+  "description": "async await simple waterfall.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indatawetrust/awaiterfall.git"
+  },
+  "keywords": [
+    "async",
+    "await",
+    "waterfall"
+  ],
+  "author": "indatawetrust",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indatawetrust/awaiterfall/issues"
+  },
+  "homepage": "https://github.com/indatawetrust/awaiterfall#readme",
+  "devDependencies": {
+    "koa": "^2.0.0-alpha.7",
+    "mongoose": "^4.6.3",
+    "request": "^2.75.0",
+    "runkoa": "^1.5.2"
+  }
+}
