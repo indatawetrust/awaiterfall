@@ -1,9 +1,12 @@
 # awaiterfall
 simple async waterfall.
 
-###### install runkoa
 
+
+```
 npm install awaiterfall
+```
+
 
 ```javascript
 const awaiterfall = require('awaiterfall')
