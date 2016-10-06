@@ -3,7 +3,7 @@ simple async waterfall.
 
 ###### install runkoa
 
-npm install -g runkoa
+npm install awaiterfall
 
 ```javascript
 const awaiterfall = require('awaiterfall')
