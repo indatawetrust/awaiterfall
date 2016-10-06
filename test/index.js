@@ -19,7 +19,9 @@ describe('awaiterfall', function(){
         request('http://localhost:3001', (err,res,body) => {
             if(err) done(err)
             
-            assert.equal(JSON.parse(body).comment, 'comment...')
+            const item = JSON.parse(body)
+
+            assert.deepEqual({ comment: item.comment, post: item.post, user: item.user }, { comment: "comment...", post: "post...", user: "ahmet" })
 
             done()
         })
