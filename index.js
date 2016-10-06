@@ -1,13 +1,6 @@
-const waterfall = async function (input, ...funcs) {
-  const list = []
-
+export default async function waterfall(val, ...funcs) {
   for (let func of funcs)
-    if (!list.length)
-      list.push(await func(input))
-    else
-      list.push(await func(list.shift()))
+    val = await func(val)
   
-  return list.pop()
+  return val
 }
-
-export default waterfall
