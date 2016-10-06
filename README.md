@@ -1,24 +1,23 @@
 # awaiterfall
-async await simple waterfall.
+simple async waterfall.
 
-###### install runkoa
 
-npm install -g runkoa
+
+```
+npm install awaiterfall
+```
+
 
 ```javascript
-let Koa = require('koa'),
-    app = new Koa(),
-    awaiterfall = require('awaiterfall')
+const awaiterfall = require('awaiterfall')
 
-app.use(async function (ctx,next){
-    const upper = _ => new Promise( res => res(_.toUpperCase()) )
+const upper = _ => Promise.resolve(_.toUpperCase())
+const reverse = _ => Promise.resolve(_.split('').reverse().join(''))
+const space = _  => Promise.resolve(_.replace(/ {0,}/g,' '))
+    
+const promise = awaiterfall("tpircsavaj", upper, reverse, space)
 
-    const reverse = _ => new Promise( res => res(_.split('').reverse().join('')) )
-
-    const space = _  => new Promise( res => res(_.replace(/ {0,}/g,' ')) )
-
-    ctx.body = await awaiterfall("tpircsavaj", upper, reverse, space)
+promise.then((_) => {
+    console.log(_) // prints " J A V A S C R I P T "
 })
-
-app.listen(3000)
 ```
